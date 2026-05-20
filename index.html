@@ -30,12 +30,9 @@
     margin: 0 auto;
     width: 90%;
     max-width: 800px;
-    /* Layer 1: Thick Ridge */
     border: 10px ridge #FF00FF; 
-    /* Layer 2: Dashed Outline inside */
     outline: 5px dashed #00FFFF;
     outline-offset: -15px;
-    /* Layer 3: Neon Glows */
     box-shadow: 0 0 20px #FFCC00, inset 0 0 20px #FF0000;
     background-color: rgba(0, 0, 0, 0.85); 
   }
@@ -58,30 +55,25 @@
     margin-top: 5px;
   }
 
-  /* Retro blinking effect */
   .blink {
-    animation: blinker 0.4s linear infinite; /* Sped up the blink! */
+    animation: blinker 0.4s linear infinite;
     font-weight: bold;
     color: #FFCC00;
   }
-  @keyframes blinker {
-    50% { opacity: 0; }
-  }
+  @keyframes blinker { 50% { opacity: 0; } }
 
   .blink-slow {
     animation: blinker-slow 1s linear infinite;
     font-weight: bold;
     color: #00FFFF;
   }
-  @keyframes blinker-slow {
-    50% { opacity: 0; }
-  }
+  @keyframes blinker-slow { 50% { opacity: 0; } }
 
   /* Retro download button style */
   .dl-button {
     background: linear-gradient(#CCCCCC, #999999);
     border: 2px inset #ffffff;
-    border-radius: 0px; /* Removed rounded edges for older look */
+    border-radius: 0px; 
     color: #000000;
     display: inline-block;
     font-family: Arial, sans-serif;
@@ -119,6 +111,11 @@
     padding: 15px;
     width: 60%;
     max-width: 500px;
+  }
+  
+  /* Make sure images in table don't get borders */
+  img.icon {
+      border: none;
   }
 </style>
 </head>
@@ -167,7 +164,7 @@
       <table width="100%" border="1" cellpadding="5" cellspacing="0" style="border-color: #666666;">
         
         <tr bgcolor="#330066">
-          <td align="center"><img src="https://via.placeholder.com/30/FF5500/FFFFFF.png?text=SC" alt="Soundcloud Icon" width="24" height="24"></td>
+          <td align="center"><img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a2/SoundCloud_logo.svg" alt="Soundcloud" width="35" height="35"></td>
           <td align="left">
             <a href="https://soundcloud.com/laudza-nareswara" class="link-title">SOUNDCLOUD LAUDZA NARESWARA</a>
             <p class="link-desc">Listen to latest mixes and raw lo-fi demos. Free download available on select tracks!</p>
@@ -176,7 +173,7 @@
         </tr>
         
         <tr bgcolor="#003300">
-          <td align="center"><img src="https://via.placeholder.com/30/1DB954/FFFFFF.png?text=SP" alt="Spotify Icon" width="24" height="24"></td>
+          <td align="center"><img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" width="30" height="30"></td>
           <td align="left">
             <a href="https://open.spotify.com/search/Jengsky" class="link-title">SPOTIFY JENGSKY</a>
             <p class="link-desc">Official album releases on the main streaming platform.</p>
@@ -185,7 +182,7 @@
         </tr>
         
         <tr bgcolor="#330000">
-          <td align="center"><img src="https://via.placeholder.com/30/FF0000/FFFFFF.png?text=YT" alt="YouTube Music Icon" width="24" height="24"></td>
+          <td align="center"><img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/6/69/YouTube_Music_app_icon.svg" alt="YouTube Music" width="30" height="30"></td>
           <td align="left">
             <a href="https://music.youtube.com/channel/UCQYKiSnPlRRun0Acy_iqqew" class="link-title">YOUTUBE MUSIC JENGSKY</a>
             <p class="link-desc">Video releases and official YouTube playlist. High quality audio streams.</p>
@@ -194,7 +191,7 @@
         </tr>
         
         <tr bgcolor="#333333">
-          <td align="center"><img src="https://via.placeholder.com/30/FE156A/FFFFFF.png?text=AM" alt="Apple Music Icon" width="24" height="24"></td>
+          <td align="center"><img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Apple_Music_icon.svg" alt="Apple Music" width="30" height="30"></td>
           <td align="left">
             <a href="https://music.apple.com/id/artist/jengsky/1854047860" class="link-title">APPLE MUSIC JENGSKY</a>
             <p class="link-desc">Stream Jengsky on Apple devices. High-fidelity audio downloads.</p>
@@ -203,7 +200,7 @@
         </tr>
 
         <tr bgcolor="#111111">
-          <td align="center"><img src="https://via.placeholder.com/30/FFFF00/000000.png?text=GN" alt="Genius Icon" width="24" height="24"></td>
+          <td align="center"><img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Genius_logo.svg/1024px-Genius_logo.svg.png" alt="Genius" width="30" height="30"></td>
           <td align="left">
             <a href="https://genius.com/artists/Jengsky" class="link-title">GENIUS LYRIC JENGSKY</a>
             <p class="link-desc">Official lyrics and lyric annotations. Find out the meaning behind the sounds!</p>
