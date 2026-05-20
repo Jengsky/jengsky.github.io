@@ -6,43 +6,49 @@
 <style type="text/css">
   /* CSS in the style of early 2000s */
   body {
-    background-color: #000033; /* Dark blue background */
-    /* TILED BACKGROUND: Replicates a pixel pattern. We are simulating a tiled image */
+    background-color: #000033; 
+    /* TILED BACKGROUND */
     background-image: linear-gradient(45deg, #000033 25%, transparent 25%), 
                       linear-gradient(-45deg, #000033 25%, transparent 25%),
                       linear-gradient(45deg, transparent 75%, #000033 75%),
                       linear-gradient(-45deg, transparent 75%, #000033 75%);
     background-size: 10px 10px;
     background-position: 0 0, 0 5px, 5px 5px, 5px 0;
-    background-color: #000066; /* Tile color */
+    background-color: #000066;
 
-    color: #CCFF33; /* Neon green/yellow main text */
-    font-family: "Comic Sans MS", Arial, Helvetica, sans-serif; /* Maximalist font choices */
+    color: #CCFF33; 
+    font-family: "Comic Sans MS", Arial, Helvetica, sans-serif; 
     font-size: 14px;
     margin: 0;
     padding: 20px;
     text-align: center;
   }
 
-  /* Table styles for maximalist border effects */
-  table {
+  /* THE CRAZY MAXIMALIST BORDER */
+  table.main-table {
     border-collapse: collapse;
     margin: 0 auto;
     width: 90%;
     max-width: 800px;
-    border: 5px solid #FF00FF; /* Hot pink borders */
-    background-color: rgba(0, 0, 0, 0.7); /* Translucent main area */
+    /* Layer 1: Thick Ridge */
+    border: 10px ridge #FF00FF; 
+    /* Layer 2: Dashed Outline inside */
+    outline: 5px dashed #00FFFF;
+    outline-offset: -15px;
+    /* Layer 3: Neon Glows */
+    box-shadow: 0 0 20px #FFCC00, inset 0 0 20px #FF0000;
+    background-color: rgba(0, 0, 0, 0.85); 
   }
 
   td {
-    padding: 10px;
-    border: 1px solid #00FFFF; /* Bright cyan internal lines */
+    padding: 15px;
+    border: 2px solid #00FFFF; 
   }
 
   h1 {
     font-size: 32px;
-    color: #FF0000; /* Bright red */
-    text-shadow: 2px 2px #FFFF00; /* Yellow drop shadow for max effect */
+    color: #FF0000;
+    text-shadow: 2px 2px #FFFF00; 
     margin-bottom: 0;
   }
 
@@ -54,7 +60,7 @@
 
   /* Retro blinking effect */
   .blink {
-    animation: blinker 0.8s linear infinite;
+    animation: blinker 0.4s linear infinite; /* Sped up the blink! */
     font-weight: bold;
     color: #FFCC00;
   }
@@ -62,11 +68,20 @@
     50% { opacity: 0; }
   }
 
+  .blink-slow {
+    animation: blinker-slow 1s linear infinite;
+    font-weight: bold;
+    color: #00FFFF;
+  }
+  @keyframes blinker-slow {
+    50% { opacity: 0; }
+  }
+
   /* Retro download button style */
   .dl-button {
     background: linear-gradient(#CCCCCC, #999999);
-    border: 2px solid #666666;
-    border-radius: 5px;
+    border: 2px inset #ffffff;
+    border-radius: 0px; /* Removed rounded edges for older look */
     color: #000000;
     display: inline-block;
     font-family: Arial, sans-serif;
@@ -74,11 +89,11 @@
     font-size: 16px;
     padding: 8px 15px;
     text-decoration: none;
-    text-shadow: 1px 1px #FFFFFF;
     margin-top: 10px;
   }
   .dl-button:hover {
-    background: linear-gradient(#FFFFFF, #CCCCCC);
+    background: #00FFFF;
+    color: #000000;
   }
 
   /* Specific link styles */
@@ -92,33 +107,37 @@
     font-weight: bold;
     padding: 5px 0;
     width: 100%;
-    border-bottom: 3px solid #FF00FF;
+    border-bottom: 3px dashed #FF00FF;
+    border-top: 3px dashed #FF00FF;
   }
 
-  /* Under construction animation placeholder style */
-  .under-con {
-    color: #FFCC00;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 24px;
-    background: #000000;
-    padding: 5px;
-    display: inline-block;
+  /* Guestbook box */
+  .guestbook {
+    background-color: #111111;
+    border: 3px dotted #FFCC00;
+    margin: 20px auto;
+    padding: 15px;
+    width: 60%;
+    max-width: 500px;
   }
 </style>
 </head>
 <body>
 
 <div class="main-marquee">
-  <marquee behavior="scroll" direction="left" scrollamount="4">
+  <marquee behavior="scroll" direction="left" scrollamount="6">
     WELCOME TO THE JENGSKY MUSIC DOWNLOAD PORTAL - THE BEST OF EARLY INTERNET - [EST. 2003] - KEEP IT REAL - ENJOY THE SAMPLES - WEBPAGE OPTIMIZED FOR NETSCAPE NAVIGATOR 4.0
   </marquee>
 </div>
 <br>
 
-<table border="5">
+<div style="font-size: 18px; letter-spacing: 2px; margin-bottom: 15px;">
+  <span class="blink">►►► WARNING:</span> <span class="blink-slow">ALBUM 'QUTB' IS INCOMING // STREAM 'SOLITER' EP NOW</span> <span class="blink">◄◄◄</span>
+</div>
+
+<table class="main-table">
   <tr>
-    <td colspan="2" bgcolor="#FF0000">
+    <td colspan="2" bgcolor="#FF0000" style="border-bottom: 5px double #00FFFF;">
       <h1>JENGSKY ARCHIVE OF SOUNDS</h1>
       <h2>Latest Releases [FULL ALBUMS & SINGLES]</h2>
     </td>
@@ -128,23 +147,24 @@
       <br>
       
       <a href="#">
-        <img src="https://via.placeholder.com/300/FFFF00/000000.png?text=JENGSKY_ALBUM_ART_PLACEHOLDER.png" alt="Album Cover [JPEG]" width="250" border="1">
+        <img src="album_art.jpg" alt="Album Cover [JPEG]" width="250" style="border: 4px solid #CCFF33;">
       </a>
+      
       <p class="blink">[[ DOWNLOAD NOW! ]]</p>
-      <p class="link-desc">File Format: JPEG <br> Size: 320 KB</p>
+      <p class="link-desc">File Format: WAV / MP3 <br> Bitrate: 320kbps</p>
       <hr color="#FF00FF">
       <p style="text-align: left; font-size: 12px;">
         <b style="color: #FFCC00">Author:</b> Jengsky<br>
-        <b style="color: #FFCC00">Date added:</b> 12 Jul 2003<br>
+        <b style="color: #FFCC00">Latest Hits:</b> STOP TRY HARD, Blood.He4rtz<br>
         <b style="color: #FFCC00">Category:</b> Electronic / Industrial Lo-Fi<br>
         <b style="color: #FFCC00">Total downloads:</b> 145,234
       </p>
     </td>
 
-    <td width="70%" valign="top">
+    <td width="70%" valign="top" bgcolor="#222233">
       <h3>OFFICIAL JENGSKY MUSIC RELEASES [STREAM/DOWNLOAD]</h3>
       
-      <table width="100%" border="1" cellpadding="5" cellspacing="0">
+      <table width="100%" border="1" cellpadding="5" cellspacing="0" style="border-color: #666666;">
         
         <tr bgcolor="#330066">
           <td align="center"><img src="https://via.placeholder.com/30/FF5500/FFFFFF.png?text=SC" alt="Soundcloud Icon" width="24" height="24"></td>
@@ -159,7 +179,7 @@
           <td align="center"><img src="https://via.placeholder.com/30/1DB954/FFFFFF.png?text=SP" alt="Spotify Icon" width="24" height="24"></td>
           <td align="left">
             <a href="https://open.spotify.com/search/Jengsky" class="link-title">SPOTIFY JENGSKY</a>
-            <p class="link-desc">Official album releases on the main streaming platform. [Spotify URL Placeholder]</p>
+            <p class="link-desc">Official album releases on the main streaming platform.</p>
           </td>
           <td><a href="https://open.spotify.com/search/Jengsky" class="dl-button">LISTEN</a></td>
         </tr>
@@ -200,13 +220,20 @@
   </tr>
 </table>
 
-<br>
-<div class="under-con">[[ Under Construction! ]]</div
-<br><br>
+<div class="guestbook">
+  <h3><span class="blink-slow" style="color: #FF00FF">***</span> SIGN MY GUESTBOOK <span class="blink-slow" style="color: #FF00FF">***</span></h3>
+  <p>Leave a comment, tell me your favorite track, or just say what's up.</p>
+  <a href="#" style="color: #CCFF33; font-size: 18px; font-weight: bold; text-decoration: underline;">[ CLICK HERE TO SIGN ]</a>
+  <br><br>
+  <p style="font-size: 11px; color: #888888; font-style: italic;">
+    Massive shoutout to Utara Crew & Katastrofe Records collective. 
+  </p>
+</div>
 
+<br>
 <p align="center" style="font-size: 12px;">This site is best viewed with:<br>
-  <img src="https://via.placeholder.com/40x40/CCCCCC/000000.png?text=IE5" alt="IE 5 logo" border="0">&nbsp;&nbsp;
-  <img src="https://via.placeholder.com/40x40/CCCCCC/000000.png?text=Netscape4" alt="Netscape 4 logo" border="0">&nbsp;&nbsp;
+  <img src="https://via.placeholder.com/40x40/CCCCCC/000000.png?text=IE5" alt="IE 5 logo" border="0">  
+  <img src="https://via.placeholder.com/40x40/CCCCCC/000000.png?text=Netscape4" alt="Netscape 4 logo" border="0">  
   <img src="https://via.placeholder.com/40x40/CCCCCC/000000.png?text=W98" alt="Windows 98 logo" border="0"><br>
   Optimized for 800x600 resolution. (c) Jengsky Music [2003]
 </p>
